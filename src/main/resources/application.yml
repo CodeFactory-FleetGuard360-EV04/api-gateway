@@ -30,6 +30,12 @@ spring:
               filters:
                 - RewritePath=/notifications/(?<segment>.*), /${segment}
                 - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_FIRST
+            - id: panel-export
+              uri: "${PANEL_SERVICE_URI}"
+              predicates:
+                - Path=/export/alerts.csv
+              filters:
+                - AuthenticationFilter
             - id: "panel-service"
               uri: "${PANEL_SERVICE_URI}"
               predicates:
