@@ -33,9 +33,7 @@ spring:
             - id: panel-export
               uri: "${PANEL_SERVICE_URI}"
               predicates:
-                - Path=/export/alerts.csv
-              filters:
-                - RewritePath=/export/(?<segment>.*), /api/v1/export/$\{segment}
+                - Path=/api/v1/export/alerts.csv
             - id: "panel-service"
               uri: "${PANEL_SERVICE_URI}"
               predicates:
