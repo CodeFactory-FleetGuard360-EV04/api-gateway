@@ -36,7 +36,6 @@ spring:
                 - Path=/export/alerts.csv
               filters:
                 - SetPath=/api/v1/export/alerts.csv
-                - AuthenticationFilter
             - id: "panel-service"
               uri: "${PANEL_SERVICE_URI}"
               predicates:
